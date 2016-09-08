@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct TableCellIdentifiers {
+    static let searchResultCell = "SearchResultCell"
+    static let nothingFoundCell = "NothingFoundCell"
+}
+
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -19,6 +24,16 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
+        
+        let cellNib = UINib(nibName: TableCellIdentifiers.searchResultCell, bundle: nil)
+        tableView.registerNib(cellNib, forCellReuseIdentifier: TableCellIdentifiers.searchResultCell)
+        
+        tableView.registerNib(UINib(nibName: TableCellIdentifiers.nothingFoundCell, bundle: nil), forCellReuseIdentifier: TableCellIdentifiers.nothingFoundCell)        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        searchBar.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,21 +77,21 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell", forIndexPath: indexPath)
         
         if searchResults.count == 0 {
-            cell.textLabel!.text = "(No result found)"
-            cell.detailTextLabel!.text = ""
+            let cell = tableView.dequeueReusableCellWithIdentifier(TableCellIdentifiers.nothingFoundCell, forIndexPath: indexPath)
             cell.selectionStyle = .None
+            return cell
         } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(TableCellIdentifiers.searchResultCell, forIndexPath: indexPath) as! SearchResultCell
+            
             let searchResult = searchResults[indexPath.row]
             
-            cell.textLabel!.text = searchResult.name
-            cell.detailTextLabel!.text = searchResult.artistName
+            cell.nameLabel.text = searchResult.name
+            cell.artistNameLabel.text = searchResult.artistName
             cell.selectionStyle = .Default
+            return cell
         }
-        
-        return cell
     }
 }
 
