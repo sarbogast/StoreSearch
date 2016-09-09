@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90EDE301D82A0BE000F280C /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90EDE2F1D82A0BE000F280C /* LoadingCell.xib */; };
+		B90EDE321D82A361000F280C /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EDE311D82A361000F280C /* LoadingCell.swift */; };
 		B950DAA01D814B9A008D7EAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DA9F1D814B9A008D7EAB /* AppDelegate.swift */; };
 		B950DAA21D814B9A008D7EAB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DAA11D814B9A008D7EAB /* SearchViewController.swift */; };
 		B950DAA51D814B9A008D7EAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B950DAA31D814B9A008D7EAB /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90EDE2F1D82A0BE000F280C /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		B90EDE311D82A361000F280C /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		B950DA9C1D814B9A008D7EAB /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B950DA9F1D814B9A008D7EAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B950DAA11D814B9A008D7EAB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				B950DAB31D8167B9008D7EAB /* SearchResultCell.xib */,
 				B950DAB51D816CE0008D7EAB /* SearchResultCell.swift */,
 				B950DAB71D8181CB008D7EAB /* NothingFoundCell.xib */,
+				B90EDE2F1D82A0BE000F280C /* LoadingCell.xib */,
+				B90EDE311D82A361000F280C /* LoadingCell.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 			files = (
 				B950DAAA1D814B9A008D7EAB /* LaunchScreen.storyboard in Resources */,
 				B950DAA71D814B9A008D7EAB /* Assets.xcassets in Resources */,
+				B90EDE301D82A0BE000F280C /* LoadingCell.xib in Resources */,
 				B950DAB41D8167B9008D7EAB /* SearchResultCell.xib in Resources */,
 				B950DAB81D8181CB008D7EAB /* NothingFoundCell.xib in Resources */,
 				B950DAA51D814B9A008D7EAB /* Main.storyboard in Resources */,
@@ -153,6 +160,7 @@
 				B950DAB21D8159CA008D7EAB /* SearchResult.swift in Sources */,
 				B950DAB61D816CE0008D7EAB /* SearchResultCell.swift in Sources */,
 				B950DAA01D814B9A008D7EAB /* AppDelegate.swift in Sources */,
+				B90EDE321D82A361000F280C /* LoadingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +310,7 @@
 				B950DAB01D814B9A008D7EAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
