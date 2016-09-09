@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     var searchResults = [SearchResult]()
     var hasSearched = false
     var isLoading = false
+    var dataTask: NSURLSessionDataTask?
     
     struct TableViewCellIdentifiers {
         static let searchResultCell = "SearchResultCell"
@@ -48,7 +49,7 @@ class SearchViewController: UIViewController {
     func urlWithSearchText(searchText: String) -> NSURL {
         let escapedSearchText = searchText.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200", escapedSearchText)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=2000", escapedSearchText)
         let url = NSURL(string: urlString)
         return url!
     }
@@ -193,6 +194,8 @@ extension SearchViewController: UISearchBarDelegate {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
+            dataTask?.cancel()
+            
             isLoading = true
             tableView.reloadData()
             
@@ -202,11 +205,13 @@ extension SearchViewController: UISearchBarDelegate {
             let url = self.urlWithSearchText(searchBar.text!)
             
             let session = NSURLSession.sharedSession()
-            let dataTask = session.dataTaskWithURL(url) { (data:NSData?, response:NSURLResponse?, error:NSError?) in
+            dataTask = session.dataTaskWithURL(url) { (data:NSData?, response:NSURLResponse?, error:NSError?) in
                 
                 print("Main thread? " + (NSThread.currentThread().isMainThread ? "Yes" : "No"))
                 
-                if let error = error {
+                if let error = error where error.code == -999 {
+                    return
+                } else if let error = error {
                     print("Failure: \(error)")
                 } else if let httpResponse = response as? NSHTTPURLResponse where httpResponse.statusCode == 200 {
                     
@@ -230,7 +235,7 @@ extension SearchViewController: UISearchBarDelegate {
                     self.showNetworkError()
                 }
             }
-            dataTask.resume()
+            dataTask?.resume()
         }
     }
     
