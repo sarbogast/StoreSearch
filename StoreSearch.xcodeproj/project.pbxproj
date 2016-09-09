@@ -18,6 +18,7 @@
 		B950DAB41D8167B9008D7EAB /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B950DAB31D8167B9008D7EAB /* SearchResultCell.xib */; };
 		B950DAB61D816CE0008D7EAB /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B950DAB51D816CE0008D7EAB /* SearchResultCell.swift */; };
 		B950DAB81D8181CB008D7EAB /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B950DAB71D8181CB008D7EAB /* NothingFoundCell.xib */; };
+		B9EF519E1D82C28C004FD86C /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EF519D1D82C28C004FD86C /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B950DAB31D8167B9008D7EAB /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		B950DAB51D816CE0008D7EAB /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B950DAB71D8181CB008D7EAB /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		B9EF519D1D82C28C004FD86C /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B950DAB71D8181CB008D7EAB /* NothingFoundCell.xib */,
 				B90EDE2F1D82A0BE000F280C /* LoadingCell.xib */,
 				B90EDE311D82A361000F280C /* LoadingCell.swift */,
+				B9EF519D1D82C28C004FD86C /* UIImageView+DownloadImage.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				B950DAA21D814B9A008D7EAB /* SearchViewController.swift in Sources */,
 				B950DAB21D8159CA008D7EAB /* SearchResult.swift in Sources */,
+				B9EF519E1D82C28C004FD86C /* UIImageView+DownloadImage.swift in Sources */,
 				B950DAB61D816CE0008D7EAB /* SearchResultCell.swift in Sources */,
 				B950DAA01D814B9A008D7EAB /* AppDelegate.swift in Sources */,
 				B90EDE321D82A361000F280C /* LoadingCell.swift in Sources */,
